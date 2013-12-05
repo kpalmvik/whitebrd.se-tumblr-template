@@ -411,9 +411,11 @@
                     {/block:Quote}
                     
                     {block:Link}
+                        {block:PermalinkPage}
                         <script type="text/javascript">
                             redirectTo('{URL}');
-                        </script>                    
+                        </script>
+                        {/block:PermalinkPage}
                         <div class="link">
                             <a href="{URL}" class="link" {Target}>{Name}</a>
                             {block:Description}
