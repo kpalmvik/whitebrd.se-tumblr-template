@@ -26,6 +26,17 @@
         <title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
         <script type="text/javascript" src="//use.typekit.net/dlf0oqh.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script type="text/javascript">
+            function navigateToUrl(navUrl) {
+                window.location.href = navUrl;
+            }
+            function redirectTo(redirectUrl) {
+                var currentPage = window.location.href;
+                if(redirectUrl && (currentPage.indexOf('post') > 0)) {
+                    setTimeout(function() { navigateToUrl(redirectUrl); }, 2000);
+                }
+            }
+        </script>
         <link rel="icon" href="{Favicon}"/>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
         <meta name="viewport" content="width=800"/> <!-- iPhone -->
@@ -400,6 +411,9 @@
                     {/block:Quote}
                     
                     {block:Link}
+                        <script type="text/javascript">
+                            redirectTo('{URL}');
+                        </script>                    
                         <div class="link">
                             <a href="{URL}" class="link" {Target}>{Name}</a>
                             {block:Description}
