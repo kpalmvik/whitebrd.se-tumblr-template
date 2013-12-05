@@ -24,6 +24,8 @@
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
+        <script type="text/javascript" src="//use.typekit.net/dlf0oqh.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         <link rel="icon" href="{Favicon}"/>
         <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
         <meta name="viewport" content="width=800"/> <!-- iPhone -->
@@ -32,7 +34,8 @@
             body {
                 margin: 0px;
                 background-color: {color:Background};
-                font-family: 'Lucida Grande', Helvetica, sans-serif;
+                font-family: Georgia,'Lucida Grande', Helvetica, sans-serif;
+                
             }            
 
             a {
@@ -45,10 +48,8 @@
                 margin: 50px auto 40px auto;
                 border-bottom: solid 1px #ccc;
                 text-align: center;
-/*                font: Bold 55px 'Trebuchet MS', Helvetica, sans-serif;
-                letter-spacing: -2px;*/
                 font-family: "franklin-gothic-urw",'Trebuchet MS', Helvetica, sans-serif;
-                font-size: 1.6em;
+                font-size: 4em;
                 font-weight: normal;   
                 text-align: center;
                 color: #000000;
@@ -71,6 +72,9 @@
                     width: 43px;
                     height: 23px;
                 }
+            .red {
+               color: #bd3737;
+            }
 
             div#content {
                 width: 420px;
@@ -95,10 +99,10 @@
                     color: {color:Description};
                 }
 
-            div#searchresultcount {
-              margin: 15px 0 30px;
-              text-align: center;
-            }
+                        div#searchresultcount {
+                            margin: 15px 0 30px;
+                            text-align: center;
+                        }
             
             div.post {
                 position: relative;
@@ -174,6 +178,10 @@
                     div.post div.caption a {
                         color: {color:Text};
                     }
+
+            span.description p {
+                margin: 0;
+            }
     
             /* Regular Post */
             
@@ -192,7 +200,7 @@
             /* Quote Post */
             
                 div.post div.quote div.quote_text {
-                    font-family: Helvetica, sans-serif;
+                    font-family: "franklin-gothic-urw", helvetica, sans-serif;
                     font-weight: bold;
                     color: {color:Quote};
                     border-left: solid 5px {color:Quote Border};
@@ -234,15 +242,17 @@
             /* Link Post */
             
                 div.post div.link a.link {
-                    font: Bold 20px Helvetica, sans-serif;
+                    font-family: "franklin-gothic-urw", helvetica, sans-serif;
+                    font-size: 1.4em;
+                    font-weight: bold;
                     letter-spacing: -1px;
                     color: {color:Link Post};
+                    text-decoration: none;
                 }
 
                     div.post div.link span.description {
-                        font-size: 13px;
+                        font-size: 1em;
                         font-weight: normal;
-                        letter-spacing: -1px;
                         color: {color:Text};
                     }
             
@@ -318,35 +328,36 @@
                         margin-top: 15px;
                     }
                     
-            .query { font-weight: bold; }
-            
+                        .query { font-weight: bold; }
+                        
             {CustomCSS}
         </style>
     </head>
     <body>
-        <h1><a href="/">whitebrd</a></h1>
-            <a href="/rss"><img src="/themes/5/rss.gif" id="rss" alt="RSS"/></a>
+        <a href="/rss"><img src="/themes/5/rss.gif" id="rss" alt="RSS"/></a>
+    
+        <h1><a href="/">whitebrd<span class="red">.</span></a></h1>
         
         <div id="content">
             <div id="description">
                 <div>
-                    <div id="search">
-                      <form action="/search" method="get">
-                          <input type="text" name="q" value="{SearchQuery}"/>
-                          <input type="submit" value="Search"/>
-                      </form>
-                    </div>
-                    
+                                        <div id="search">
+                                            <form action="/search" method="get">
+                                                <input type="text" name="q" value="{SearchQuery}"/>
+                                                <input type="submit" value="Search"/>
+                                            </form>
+                                        </div>
+                                        
                     {Description}
                     <p><a href="/archive">Archive</a></p>
                 </div>
             </div>
 
-            {block:SearchPage}
-            <div id="searchresultcount">
-              <p>Your search for <span class="query">{SearchQuery}</span> returned {SearchResultCount} result(s).</p>
-            </div>
-            {/block:SearchPage}
+                        {block:SearchPage}
+                        <div id="searchresultcount">
+                            <p>Your search for <span class="query">{SearchQuery}</span> returned {SearchResultCount} result(s).</p>
+                        </div>
+                        {/block:SearchPage}
             
             {block:Posts}
                 <div class="post">
