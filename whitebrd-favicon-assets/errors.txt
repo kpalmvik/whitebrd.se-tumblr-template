@@ -1,0 +1,3 @@
+[Thu Dec 05 2013 19:39:15 GMT+0100 (CET)]
+Open favicon.png and use  Photoshop Plugin  http://www.telegrap: File name contains invalid character ":"
+
