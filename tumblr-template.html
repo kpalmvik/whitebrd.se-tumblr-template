@@ -349,13 +349,17 @@
                         }
                     
                     div#footer div#credit {
-                        font: normal 13px Georgia, serif;
+                        font: normal 13px "franklin-gothic-urw", helvetica, sans-serif;
                         font-size: 13px;
                         margin-top: 15px;
                     }
                     
                         .query { font-weight: bold; }
-                        
+                    
+                div#footer-pagenav {
+                    font-family: "franklin-gothic-urw", helvetica, sans-serif;
+                    font-size:2.5em;
+                }
             {CustomCSS}
         </style>
     </head>
@@ -476,13 +480,15 @@
             {/block:Posts}
 
             <div id="footer">
-                {block:PreviousPage}
-                    <a href="{PreviousPage}">&#171; Previous</a> &nbsp;&nbsp;
-                {/block:PreviousPage}
-                
-                {block:NextPage}
-                    <a href="{NextPage}">Next &#187;</a>
-                {/block:NextPage}
+                <div id="footer-pagenav">
+                    {block:PreviousPage}
+                        <a href="{PreviousPage}">&#171; Previous</a> &nbsp;&nbsp;
+                    {/block:PreviousPage}
+                    
+                    {block:NextPage}
+                        <a href="{NextPage}">Next &#187;</a>
+                    {/block:NextPage}
+                </div>
                 
                 <div id="credit">
                     By <a href="http://www.kristofer.pp.se/">Kristofer Gustafsson</a>
