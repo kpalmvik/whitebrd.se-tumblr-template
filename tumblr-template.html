@@ -93,7 +93,7 @@
                 font-size: 1em;
                 line-height: 1.12em;
                 text-align:center;
-                margin: 1em auto 0 auto;
+                margin: 1rem auto 0.5rem auto;
                 width: 600px;
                 padding: 7px 5px 1px 5px;
                 position: relative;
@@ -108,7 +108,7 @@
             #search {
                 font-size: 1em;
                 line-height: 1.12em;
-                margin: 0 auto 1em auto;
+                margin: 0.5rem auto 1rem auto;
                 width: 600px;
                 padding: 7px 5px 1px 5px;
                 position: relative;
@@ -364,6 +364,8 @@
     
         <h1><a href="/">whitebrd<span class="red">.</span></a></h1>
         <div id="description-top">{Description}</div>
+
+        {block:IndexPage}
         <div id="search">
             <script>
               (function() {
@@ -379,6 +381,7 @@
             </script>
             <gcse:search></gcse:search>
         </div>
+        {/block:IndexPage}
         
         <div id="content">
             {block:Posts}
