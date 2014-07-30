@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
         <!-- DEFAULT COLORS -->
+        <meta name="google-site-verification" content="a0SX90FavA-_BDpEvkuM0Q9vatKywJZODo3bsrNcAjE" />
         <meta name="color:Background" content="#fff"/>
         <meta name="color:Title" content="#444"/>
         <meta name="color:Description" content="#777"/>
@@ -43,14 +44,17 @@
 
         <style type="text/css">
             body {
-                margin: 0px;
+                margin: 0;
                 background-color: {color:Background};
                 font-family: Georgia,'Lucida Grande', Helvetica, sans-serif;
-                
-            }            
+            }
 
             a {
                 color: {color:Inline Link};
+            }
+            
+            .red {
+               color: #bd3737;
             }
 
             h1 {
@@ -83,53 +87,39 @@
                     width: 43px;
                     height: 23px;
                 }
-            .red {
-               color: #bd3737;
-            }
 
-            div#content {
-                width: 420px;
-                margin: auto;
-                position: relative;
-            }
-
-                div#content div#description {
-                    position: absolute;
-                    right: -170px;
-                    width: 160px;
-                    text-align: right;
-                }
-
-            div#description-top {
+            #description-top {
                 font-family: 'franklin-gothic-urw','Trebuchet MS', Helvetica, sans-serif;
                 font-size: 1em;
                 line-height: 1.12em;
                 text-align:center;
-                margin: 1em auto 1em auto;
+                margin: 1em auto 0 auto;
                 width: 600px;
                 padding: 7px 5px 1px 5px;
                 position: relative;
                 background: #f8f8f8;
             }
-            div#description-top a {
-                color: #ff0000;
-                text-decoration: none;
-            }
-            div#description {
-                font: normal 17px georgia,Helvetica,sans-serif;
-                line-height: 20px;
-                color: {color:Description};
-            }
-
-                div#description a {
-                    color: {color:Description};
+            
+                #description-top a {
+                    color: #ff0000;
+                    text-decoration: none;
                 }
 
-                        div#searchresultcount {
-                            margin: 15px 0 30px;
-                            text-align: center;
-                        }
-            
+            #search {
+                font-size: 1em;
+                line-height: 1.12em;
+                margin: 0 auto 1em auto;
+                width: 600px;
+                padding: 7px 5px 1px 5px;
+                position: relative;
+            }
+
+            #content {
+                width: 480px;
+                margin: auto;
+                position: relative;
+            }
+
             div.post {
                 position: relative;
                 margin-bottom: 40px;
@@ -204,7 +194,7 @@
                     div.post div.caption a {
                         color: {color:Text};
                     }
-
+                    
             span.description p {
                 margin: 0;
             }
@@ -349,17 +339,23 @@
                         }
                     
                     div#footer div#credit {
-                        font: normal 13px "franklin-gothic-urw", helvetica, sans-serif;
-                        font-size: 13px;
-                        margin-top: 15px;
+                        font: normal 0.8rem "franklin-gothic-urw", helvetica, sans-serif;
+                        margin-top: 2rem;
                     }
                     
                         .query { font-weight: bold; }
                     
-                div#footer-pagenav {
-                    font-family: "franklin-gothic-urw", helvetica, sans-serif;
-                    font-size:2.5em;
-                }
+                    div#footer-pagenav {
+                        font-family: "franklin-gothic-urw", helvetica, sans-serif;
+                        font-size:2.5em;
+                    }
+                    
+                    div#footer-archive {
+                        font-family: "franklin-gothic-urw", helvetica, sans-serif;
+                        font-size:1.1rem;
+                        margin: 0.5rem;
+                    }
+
             {CustomCSS}
         </style>
     </head>
@@ -368,25 +364,23 @@
     
         <h1><a href="/">whitebrd<span class="red">.</span></a></h1>
         <div id="description-top">{Description}</div>
+        <div id="search">
+            <script>
+              (function() {
+                var cx = '013017268606838430974:yuinc6vyv2w';
+                var gcse = document.createElement('script');
+                gcse.type = 'text/javascript';
+                gcse.async = true;
+                gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+                    '//www.google.com/cse/cse.js?cx=' + cx;
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gcse, s);
+              })();
+            </script>
+            <gcse:search></gcse:search>
+        </div>
+        
         <div id="content">
-            <div id="description">
-                <div>
-                                        <div id="search">
-                                            <form action="/search" method="get">
-                                                <input type="text" name="q" value="{SearchQuery}"/>
-                                                <input type="submit" value="Search"/>
-                                            </form>
-                                        </div>
-                    <p><a href="/archive">Archive</a></p>
-                </div>
-            </div>
-
-                        {block:SearchPage}
-                        <div id="searchresultcount">
-                            <p>Your search for <span class="query">{SearchQuery}</span> returned {SearchResultCount} result(s).</p>
-                        </div>
-                        {/block:SearchPage}
-            
             {block:Posts}
                 <div class="post">
                     {block:NewDayDate}
@@ -488,6 +482,9 @@
                     {block:NextPage}
                         <a href="{NextPage}">Next &#187;</a>
                     {/block:NextPage}
+                </div>
+                <div id="footer-archive">
+                    <a href="/archive">Browse by date &gt;</a>
                 </div>
                 
                 <div id="credit">
