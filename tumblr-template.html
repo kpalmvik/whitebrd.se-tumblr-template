@@ -104,6 +104,15 @@
                     color: #ff0000;
                     text-decoration: none;
                 }
+                
+                #description-top h3 {
+                    margin-top: 0.5rem;
+                }
+                
+                #description-top span p {
+                    margin: 1rem;
+                    text-
+                }
 
             #search {
                 font-size: 1em;
@@ -363,7 +372,10 @@
         <a href="/rss"><img src="/themes/5/rss.gif" id="rss" alt="RSS"/></a>
     
         <h1><a href="/">whitebrd<span class="red">.</span></a></h1>
-        <div id="description-top">{Description}</div>
+        <div id="description-top">
+            <h3>The online whiteboard of <a href="http://kristofer.palmvik.se/">Kristofer Palmvik (Gustafsson)</a></h3>
+            {Description}
+        </div>
 
         {block:IndexPage}
         <div id="search">
