@@ -7,7 +7,7 @@
         <meta name="color:Background" content="#fff"/>
         <meta name="color:Title" content="#444"/>
         <meta name="color:Description" content="#777"/>
-        <meta name="color:Post Title" content="#6498cc"/>    
+        <meta name="color:Post Title" content="#6498cc"/>
         <meta name="color:Text" content="#444"/>
         <meta name="color:Inline Link" content="#6498cc"/>
         <meta name="color:Quote" content="#888"/>
@@ -20,7 +20,7 @@
         <meta name="color:Conversation Text" content="#444"/>
         <meta name="color:Date" content="#ccc"/>
         <meta name="color:Date Block" content="#6498cc"/>
-        <meta name="color:Date Block Text" content="#bbd5f1"/>        
+        <meta name="color:Date Block Text" content="#bbd5f1"/>
         <!-- END DEFAULT COLORS -->
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -52,7 +52,7 @@
             a {
                 color: {color:Inline Link};
             }
-            
+
             .red {
                color: #bd3737;
             }
@@ -65,20 +65,20 @@
                 text-align: center;
                 font-family: "franklin-gothic-urw",'Trebuchet MS', Helvetica, sans-serif;
                 font-size: 4em;
-                font-weight: normal;   
+                font-weight: normal;
                 text-align: center;
                 color: #000000;
                 letter-spacing:0.1em;
                 line-height: 50px;
                 position: relative;
             }
-            
+
                 h1 a {
                     color: {color:Title};
                     text-decoration: none;
 
                 }
-                
+
                 h1 img {
                     border-width: 0px;
                     position: absolute;
@@ -88,27 +88,52 @@
                     height: 23px;
                 }
 
+            #rss {
+                float: left;
+                position: fixed;
+                border-right: 2px solid #fff;
+                border-bottom: 2px solid #fff;
+                top: 0;
+                left: 0;
+                z-index: 100;
+                width: 4rem;
+                padding: 0.2rem;
+                background: #e18728;
+                text-align: center;
+                font-family: "franklin-gothic-urw",'Trebuchet MS', Helvetica, sans-serif;
+                font-weight: bold;
+                font-size: 1rem;
+            }
+            svg {
+                width: 0.8rem;
+                height: 0.8rem;
+                fill: #fff;
+            }
+            #rss a {
+                color: #fff;
+                text-decoration: none;
+            }
             #description-top {
                 font-family: 'franklin-gothic-urw','Trebuchet MS', Helvetica, sans-serif;
                 font-size: 1em;
                 line-height: 1.12em;
                 text-align:center;
-                margin: 1rem auto 0.5rem auto;
+                margin: 1rem auto 0.75rem auto;
                 width: 600px;
                 padding: 7px 5px 1px 5px;
                 position: relative;
                 background: #f8f8f8;
             }
-            
+
                 #description-top a {
                     color: #ff0000;
                     text-decoration: none;
                 }
-                
+
                 #description-top h3 {
                     margin-top: 0.5rem;
                 }
-                
+
                 #description-top span p {
                     margin: 1rem;
                     text-
@@ -139,7 +164,7 @@
                     position: absolute;
                     left: -260px;
                     text-align: right;
-                    width: 230px;                
+                    width: 230px;
                     white-space: nowrap;
                     font: normal 34px Helvetica, sans-serif;
                     letter-spacing: -2px;
@@ -147,7 +172,7 @@
                     text-transform: uppercase;
                     line-height: 35px;
                 }
-                
+
                     div.post div.date div.date_brick {
                         float: right;
                         height: 30px;
@@ -163,20 +188,20 @@
                         overflow: hidden;
                     }
 
-                div.post img.permalink {
-                    width: 14px;
-                    height: 13px;
-                    border-width: 0px;
-                    background-color: #000;
-                    display: none;
+                div.post span.permalink {
+                    display: inline;
                     position: absolute;
-                    right: 0px;
+                    color: #ddd;
+                    right: -2rem;
                     top: 0px;
-                    z-index: 10;
+                    font-weight: bold;
+                    transition: color 1s;
                 }
-                
-                    div.post:hover img.permalink {
+
+                    div.post:hover span.permalink {
                         display: inline;
+                        color: #f00;
+                        transition: color 0.3s;
                     }
 
                 div.post h2 {
@@ -191,7 +216,7 @@
                         color: {color:Post Title};
                         text-decoration: none;
                     }
-            
+
                 div.post div.caption {
                     font-size: 14px;
                     font-weight: bold;
@@ -203,13 +228,13 @@
                     div.post div.caption a {
                         color: {color:Text};
                     }
-                    
+
             span.description p {
                 margin: 0;
             }
-    
+
             /* Regular Post */
-            
+
                 div.post div.regular {
                     font-size: 12px;
                     color: {color:Text};
@@ -221,9 +246,9 @@
                         border-left: solid 2px {color:Text};
                         padding-left: 10px;
                     }
-                        
+
             /* Quote Post */
-            
+
                 div.post div.quote div.quote_text {
                     font-family: "franklin-gothic-urw", helvetica, sans-serif;
                     font-weight: bold;
@@ -231,19 +256,19 @@
                     border-left: solid 5px {color:Quote Border};
                     padding-left: 10px;
                 }
-                
+
                     div.post div.quote div.quote_text span.short {
                         font-size: 36px;
                         line-height: 40px;
                         letter-spacing: -1px;
                     }
-                    
+
                     div.post div.quote div.quote_text span.medium {
                         font-size: 25px;
                         line-height: 27px;
                         letter-spacing: -1px;
                     }
-                    
+
                     div.post div.quote div.quote_text span.long {
                         font-size: 16px;
                         line-height: 20px;
@@ -252,7 +277,7 @@
                     div.post div.quote div.quote_text a {
                         color: {color:Quote};
                     }
-        
+
                 div.post div.quote div.source {
                     font-size: 16px;
                     font-weight: Bold;
@@ -263,9 +288,9 @@
                     div.post div.quote div.source a {
                         color: {color:Quote Source};
                     }
-            
+
             /* Link Post */
-            
+
                 div.post div.link a.link {
                     font-family: "franklin-gothic-urw", helvetica, sans-serif;
                     font-size: 1.4em;
@@ -280,39 +305,39 @@
                         font-weight: normal;
                         color: {color:Text};
                     }
-            
+
             /* Conversation Post */
-                        
+
                 div.post div.conversation ul {
                     list-style-type: none;
                     margin: 0px;
                     padding: 0px 0px 0px 1px;
                     border-left: solid 5px {color:Conversation Border};
                 }
-            
+
                     div.post div.conversation ul li {
                         font-size: 12px;
                         padding: 4px 10px 4px 8px;
                         color: {color:Conversation Text};
                         margin-bottom: 1px;
                     }
-            
+
                         div.post div.conversation ul li span.label {
                             font-weight: bold;
                         }
-                        
+
                             div.post div.conversation ul li span.user_1 {
                                 color: #c00;
                             }
-                            
+
                             div.post div.conversation ul li span.user_2 {
                                 color: #00c;
                             }
-                            
+
                             div.post div.conversation ul li span.user_3 {
                                 color: #0a0;
                             }
-                        
+
                         div.post div.conversation ul li.odd {
                             background-color: {color:Conversation Background 1};
                         }
@@ -320,16 +345,16 @@
                         div.post div.conversation ul li.even {
                             background-color: {color:Conversation Background 2};
                         }
-            
+
             /* Video Post */
-            
+
                 div.post div.video {
                     width: 400px;
                     margin: auto;
                 }
 
             /* Footer */
-            
+
                 div#footer {
                     margin: 40px 0px 30px 0px;
                     text-align: center;
@@ -337,28 +362,28 @@
                     font-weight: bold;
                     color: {color:Text};
                 }
-            
+
                     div#footer a {
                         text-decoration: none;
                         color: {color:Text};
                     }
-            
+
                         div#footer a:hover {
                             text-decoration: underline;
                         }
-                    
+
                     div#footer div#credit {
                         font: normal 0.8rem "franklin-gothic-urw", helvetica, sans-serif;
                         margin-top: 2rem;
                     }
-                    
+
                         .query { font-weight: bold; }
-                    
+
                     div#footer-pagenav {
                         font-family: "franklin-gothic-urw", helvetica, sans-serif;
                         font-size:2.5em;
                     }
-                    
+
                     div#footer-archive {
                         font-family: "franklin-gothic-urw", helvetica, sans-serif;
                         font-size:1.1rem;
@@ -369,11 +394,18 @@
         </style>
     </head>
     <body>
-        <a href="/rss"><img src="/themes/5/rss.gif" id="rss" alt="RSS"/></a>
-    
+        <div id="rss">
+            <a href="/rss">
+                <span class="rss-icon">
+                    <svg viewBox="0 0 33 33" width="15" height="15" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 4.259,23.467c-2.35,0-4.259,1.917-4.259,4.252c0,2.349, 1.909,4.244, 4.259,4.244 c 2.358,0, 4.265-1.895, 4.265-4.244C 8.525,25.383, 6.618,23.467, 4.259,23.467zM 0.005,10.873l0,6.133 c 3.993,0, 7.749,1.562, 10.577,4.391c 2.825,2.822, 4.384,6.595, 4.384,10.603l 6.16,0 C 21.125,20.349, 11.648,10.873, 0.005,10.873zM 0.012,0l0,6.136 c 14.243,0, 25.836,11.604, 25.836,25.864L 32,32 C 32,14.36, 17.648,0, 0.012,0z"></path></g></svg>
+  </span>
+                <span class="rss-text">RSS</span>
+            </a>
+        </div>
+
         <h1><a href="/">whitebrd<span class="red">.</span></a></h1>
         <div id="description-top">
-            <h3>The online whiteboard of <a href="http://kristofer.palmvik.se/">Kristofer Palmvik (Gustafsson)</a></h3>
+            <h3>The online whiteboard of <a href="http://kristofer.palmvik.se/">Kristofer Palmvik</a></h3>
             {Description}
         </div>
 
@@ -394,7 +426,7 @@
             <gcse:search></gcse:search>
         </div>
         {/block:IndexPage}
-        
+
         <div id="content">
             {block:Posts}
                 <div class="post">
@@ -407,9 +439,9 @@
                             {ShortDayOfWeek}
                         </div>
                     {/block:NewDayDate}
-                    
-                    <a href="{Permalink}"><img src="/themes/5/permalink.gif"
-                    class="permalink" alt="permalink"/></a>
+
+                    <a href="{Permalink}"><span
+                    class="permalink">&rarr;</span></a>
 
                     {block:Regular}
                         <div class="regular">
@@ -417,7 +449,7 @@
                             {Body}
                         </div>
                     {/block:Regular}
-                    
+
                     {block:Photo}
                         <div class="photo">
                             {LinkOpenTag}<img src="{PhotoURL-400}" alt="{PhotoAlt}"/>{LinkCloseTag}
@@ -426,7 +458,7 @@
                             {/block:Caption}
                         </div>
                     {/block:Photo}
-                    
+
                     {block:Quote}
                         <div class="quote">
                             <div class="quote_text"><span class="{Length}">{Quote}</span></div>
@@ -435,7 +467,7 @@
                             {/block:Source}
                         </div>
                     {/block:Quote}
-                    
+
                     {block:Link}
                         {block:PermalinkPage}
                         <script type="text/javascript">
@@ -449,7 +481,7 @@
                             {/block:Description}
                         </div>
                     {/block:Link}
-                    
+
                     {block:Conversation}
                         <div class="conversation">
                             {block:Title}
@@ -467,7 +499,7 @@
                             </ul>
                         </div>
                     {/block:Conversation}
-                    
+
                     {block:Audio}
                         <div class="audio">
                             {AudioPlayerBlack}
@@ -476,7 +508,7 @@
                             {/block:Caption}
                         </div>
                     {/block:Audio}
-                    
+
                     {block:Video}
                         <div class="video">
                             {Video-400}
@@ -493,15 +525,15 @@
                     {block:PreviousPage}
                         <a href="{PreviousPage}">&#171; Previous</a> &nbsp;&nbsp;
                     {/block:PreviousPage}
-                    
+
                     {block:NextPage}
                         <a href="{NextPage}">Next &#187;</a>
                     {/block:NextPage}
                 </div>
                 <div id="footer-archive">
-                    <a href="/archive">Browse by date &gt;</a>
+                    <a href="/">Browse &gt;</a>
                 </div>
-                
+
                 <div id="credit">
                     By <a href="http://kristofer.palmvik.se/">Kristofer Palmvik</a>
                     &mdash;
