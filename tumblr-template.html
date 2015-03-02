@@ -1,9 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html class="no-js" lang="">
     <head>
-        <!-- DEFAULT COLORS -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="The online whiteboard of Kristofer Palmvik">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="google-site-verification" content="a0SX90FavA-_BDpEvkuM0Q9vatKywJZODo3bsrNcAjE" />
+
+        <title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
+
+        <link rel="icon" href="{Favicon}"/>
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
+
+        <!-- DEFAULT COLORS -->
         <meta name="color:Background" content="#fff"/>
         <meta name="color:Title" content="#444"/>
         <meta name="color:Description" content="#777"/>
@@ -23,10 +31,13 @@
         <meta name="color:Date Block Text" content="#bbd5f1"/>
         <!-- END DEFAULT COLORS -->
 
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+        <!-- Fonts from Typekit -->
         <script type="text/javascript" src="//use.typekit.net/dlf0oqh.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+        <!-- Navigate to function -->
         <script type="text/javascript">
             function navigateToUrl(navUrl) {
                 window.location.href = navUrl;
@@ -38,19 +49,18 @@
                 }
             }
         </script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-1408640-10', 'auto');
-  ga('require', 'linkid', 'linkid.js');
-  ga('send', 'pageview');
-</script>
-        <link rel="icon" href="{Favicon}"/>
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}"/>
-        <meta name="viewport" content="width=800"/> <!-- iPhone -->
+        <!-- Google Analytics -->
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-1408640-10', 'auto');
+          ga('require', 'linkid', 'linkid.js');
+          ga('send', 'pageview');
+        </script>
 
         <style type="text/css">
             body {
