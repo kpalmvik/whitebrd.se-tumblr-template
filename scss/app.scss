@@ -39,34 +39,36 @@
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
 
+@import "colors";
+
 body {
   margin: 0;
-  background-color: #FFFFFF;
+  background-color: $white;
   font-family: Georgia, 'Lucida Grande', Helvetica, sans-serif;
 }
 a {
-  color: #5F5F5F;
+  color: $dark-gray;
 }
 .red {
-  color: #bd3737;
+  color: $whitebrd-red;
 }
 h1 {
   width: 600px;
   padding: 0px 100px 20px 100px;
   margin: 30px auto 10px auto;
-  border-bottom: solid 1px #ccc;
+  border-bottom: solid 1px $mid-gray;
   text-align: center;
   font-family: "franklin-gothic-urw", 'Trebuchet MS', Helvetica, sans-serif;
   font-size: 4em;
   font-weight: normal;
   text-align: center;
-  color: #000000;
+  color: $black;
   letter-spacing: 0.1em;
   line-height: 50px;
   position: relative;
 }
 h1 a {
-  color: #000000;
+  color: $black;
   text-decoration: none;
 }
 h1 img {
@@ -80,14 +82,14 @@ h1 img {
 #rss {
   float: left;
   position: fixed;
-  border-right: 2px solid #fff;
-  border-bottom: 2px solid #fff;
+  border-right: 2px solid $white;
+  border-bottom: 2px solid $white;
   top: 0;
   left: 0;
   z-index: 100;
   width: 4rem;
   padding: 0.2rem;
-  background: #e18728;
+  background: $rss-orange;
   text-align: center;
   font-family: "franklin-gothic-urw", 'Trebuchet MS', Helvetica, sans-serif;
   font-weight: bold;
@@ -96,10 +98,10 @@ h1 img {
 svg {
   width: 0.8rem;
   height: 0.8rem;
-  fill: #fff;
+  fill: $white;
 }
 #rss a {
-  color: #fff;
+  color: $white;
   text-decoration: none;
 }
 #description-top {
@@ -111,10 +113,10 @@ svg {
   width: 600px;
   padding: 7px 5px 1px 5px;
   position: relative;
-  background: #f8f8f8;
+  background-color: $light-light-gray;
 }
 #description-top a {
-  color: #ff0000;
+  color: $pure-red;
   text-decoration: none;
 }
 #description-top h3 {
@@ -149,7 +151,7 @@ div.post div.date {
   white-space: nowrap;
   font: normal 34px Helvetica, sans-serif;
   letter-spacing: -2px;
-  color: #555;
+  color: $dark-gray;
   text-transform: uppercase;
   line-height: 35px;
 }
@@ -157,7 +159,7 @@ div.post div.date div.date_brick {
   float: right;
   height: 30px;
   width: 45px;
-  background-color: #ff0000;
+  background-color: $pure-red;
   color: #FCFCFC;
   font: Bold 12px Verdana, Sans-Serif;
   text-align: center;
@@ -170,7 +172,7 @@ div.post div.date div.date_brick {
 div.post span.permalink {
   display: inline;
   position: absolute;
-  color: #ddd;
+  color: $light-gray;
   right: -2rem;
   top: 0px;
   font-weight: bold;
@@ -178,29 +180,29 @@ div.post span.permalink {
 }
 div.post:hover span.permalink {
   display: inline;
-  color: #f00;
+  color: $pure-red;
   transition: color 0.3s;
 }
 div.post h2 {
   font-size: 18px;
   font-weight: bold;
-  color: #000000;
+  color: $black;
   letter-spacing: -1px;
   margin: 0px 0px 5px 0px;
 }
 div.post h2 a {
-  color: #000000;
+  color: $black;
   text-decoration: none;
 }
 div.post div.caption {
   font-size: 14px;
   font-weight: bold;
-  color: #444;
+  color: $dark-gray;
   margin-top: 10px;
   padding: 0px 20px 0px 20px;
 }
 div.post div.caption a {
-  color: #444;
+  color: $dark-gray;
 }
 span.description p {
   margin: 0;
@@ -209,12 +211,12 @@ span.description p {
 
 div.post div.regular {
   font-size: 12px;
-  color: #444;
+  color: $dark-gray;
   line-height: 17px;
 }
 div.post div.regular blockquote {
   font-style: italic;
-  border-left: solid 2px #444;
+  border-left: solid 2px $dark-gray;
   padding-left: 10px;
 }
 /* Quote Post */
@@ -222,8 +224,8 @@ div.post div.regular blockquote {
 div.post div.quote div.quote_text {
   font-family: "franklin-gothic-urw", helvetica, sans-serif;
   font-weight: bold;
-  color: #FD1E00;
-  border-left: solid 5px #FFFFFF;
+  color: $quote-red;
+  border-left: solid 5px $white;
   padding-left: 10px;
 }
 div.post div.quote div.quote_text span.short {
@@ -241,16 +243,16 @@ div.post div.quote div.quote_text span.long {
   line-height: 20px;
 }
 div.post div.quote div.quote_text a {
-  color: #FD1E00;
+  color: $quote-red;
 }
 div.post div.quote div.source {
   font-size: 16px;
   font-weight: Bold;
-  color: #000000;
+  color: $black;
   margin-top: 5px;
 }
 div.post div.quote div.source a {
-  color: #000000;
+  color: $black;
 }
 /* Link Post */
 
@@ -259,13 +261,13 @@ div.post div.link a.link {
   font-size: 1.4em;
   font-weight: bold;
   letter-spacing: -1px;
-  color: #ff0000;
+  color: $pure-red;
   text-decoration: none;
 }
 div.post div.link span.description {
   font-size: 1em;
   font-weight: normal;
-  color: #444;
+  color: $dark-gray;
 }
 /* Conversation Post */
 
@@ -273,12 +275,12 @@ div.post div.conversation ul {
   list-style-type: none;
   margin: 0px;
   padding: 0px 0px 0px 1px;
-  border-left: solid 5px #ff0000;
+  border-left: solid 5px $pure-red;
 }
 div.post div.conversation ul li {
   font-size: 12px;
   padding: 4px 10px 4px 8px;
-  color: #000000;
+  color: $black;
   margin-bottom: 1px;
 }
 div.post div.conversation ul li span.label {
@@ -294,7 +296,7 @@ div.post div.conversation ul li span.user_3 {
   color: #0a0;
 }
 div.post div.conversation ul li.odd {
-  background-color: #ff0000;
+  background-color: $pure-red;
 }
 div.post div.conversation ul li.even {
   background-color: #ff2a00;
@@ -312,11 +314,11 @@ div#footer {
   text-align: center;
   font-size: 15px;
   font-weight: bold;
-  color: #444;
+  color: $dark-gray;
 }
 div#footer a {
   text-decoration: none;
-  color: #444;
+  color: $dark-gray;
 }
 div#footer a:hover {
   text-decoration: underline;
