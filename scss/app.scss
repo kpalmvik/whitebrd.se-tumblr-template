@@ -40,6 +40,7 @@
 //   "foundation/components/visibility";
 
 @import "colors";
+@import "rss";
 
 body {
   margin: 0;
@@ -103,32 +104,6 @@ a {
    }
 }
 
-
-#rss {
-  float: left;
-  position: fixed;
-  border-right: 2px solid $white;
-  border-bottom: 2px solid $white;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  width: 4rem;
-  padding: 0.2rem;
-  background: $rss-orange;
-  text-align: center;
-  font-family: "franklin-gothic-urw", 'Trebuchet MS', Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 1rem;
-}
-svg {
-  width: 0.8rem;
-  height: 0.8rem;
-  fill: $white;
-}
-#rss a {
-  color: $white;
-  text-decoration: none;
-}
 #search {
   font-size: 1em;
   line-height: 1.12em;
