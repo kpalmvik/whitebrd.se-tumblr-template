@@ -69,11 +69,11 @@
   </a>
 
   <div class="row">
-    <div class="small-12 medium-push-1 medium-10 columns">
+    <div class="small-12 medium-offset-1 medium-10 columns">
       <header>
         <h1 class="logo gray-underline"><a href="/">whitebrd<span class="reddot">.</span></a></h1>
         <div class="row">
-          <div class="small-12 medium-push-1 medium-10 columns">
+          <div class="small-12 medium-offset-1 medium-10 columns">
             <div class="whitebrd-about">
               <h2>The online whiteboard of <a href="http://kristofer.palmvik.se/">Kristofer&nbsp;Palmvik</a></h2>
               {Description}
@@ -87,7 +87,7 @@
 
   {block:IndexPage}
   <div class="row">
-    <div class="small-12 medium-push-1 medium-10 columns">
+    <div class="small-12 medium-offset-1 medium-10 columns">
       <div id="search">
         <script>
           (function() {
@@ -107,84 +107,90 @@
   </div>
   {/block:IndexPage}
 
-  <div id="content">
+  <div class="content">
     {block:Posts}
-    <div class="post">
-      {block:NewDayDate}
-      <div class="date">
-        <div class="date_brick">
-          {ShortMonth}
-          <br/> {DayOfMonth}{DayOfMonthSuffix}
+    <div class="row">
+      <div class="small-12 medium-3 columns left-column">
+        {block:NewDayDate}
+        <div class="date">
+          <div class="date-day">
+            {ShortDayOfWeek}
+          </div>
+          <div class="date-brick">
+            <span class="date-brick-month">{ShortMonth}</span>
+            <span class="date-brick-day">{DayOfMonth}{DayOfMonthSuffix}</span>
+          </div>
         </div>
-        {ShortDayOfWeek}
+        {/block:NewDayDate}
       </div>
-      {/block:NewDayDate}
-
-      <a href="{Permalink}">
-        <span class="permalink">&rarr;</span>
-      </a>
-
-      {block:Regular}
-      <div class="regular">
-        {block:Title}
-        <h2><a href="{Permalink}">{Title}</a>
-        </h2>{/block:Title} {Body}
-      </div>
-      {/block:Regular} {block:Photo}
-      <div class="photo">
-        {LinkOpenTag}
-        <img src="{PhotoURL-400}" alt="{PhotoAlt}" />{LinkCloseTag} {block:Caption}
-        <div class="caption">{Caption}</div>
-        {/block:Caption}
-      </div>
-      {/block:Photo} {block:Quote}
-      <div class="quote">
-        <div class="quote_text">
-          <span class="{Length}">{Quote}</span>
+      <div class="small-12 medium-7 columns main-column">
+        <div class="post">
+          {block:Regular}
+          <div class="regular">
+            {block:Title}
+            <h2><a href="{Permalink}">{Title}</a>
+            </h2>{/block:Title} {Body}
+          </div>
+          {/block:Regular} {block:Photo}
+          <div class="photo">
+            {LinkOpenTag}
+            <img src="{PhotoURL-400}" alt="{PhotoAlt}" />{LinkCloseTag} {block:Caption}
+            <div class="caption">{Caption}</div>
+            {/block:Caption}
+          </div>
+          {/block:Photo} {block:Quote}
+          <div class="quote">
+            <div class="quote_text">
+              <span class="{Length}">{Quote}</span>
+            </div>
+            {block:Source}
+            <div class="source">&mdash; {Source}</div>
+            {/block:Source}
+          </div>
+          {/block:Quote} {block:Link} {block:PermalinkPage}
+          <script type="text/javascript">
+            redirectTo('{URL}');
+          </script>
+          {/block:PermalinkPage}
+          <div class="link">
+            <a href="{URL}" class="link" {Target}>{Name}</a> {block:Description}
+            <span class="description">{Description}</span>
+            {/block:Description}
+          </div>
+          {/block:Link} {block:Conversation}
+          <div class="conversation">
+            {block:Title}
+            <h2><a href="{Permalink}">{Title}</a>
+            </h2>
+            {/block:Title}
+            <ul>
+              {block:Lines}
+              <li class="{Alt}">
+                {block:Label}
+                <span class="label user_{UserNumber}">{Label}</span>
+                {/block:Label} {Line}
+              </li>
+              {/block:Lines}
+            </ul>
+          </div>
+          {/block:Conversation} {block:Audio}
+          <div class="audio">
+            {AudioPlayerBlack} {block:Caption}
+            <div class="caption">{Caption}</div>
+            {/block:Caption}
+          </div>
+          {/block:Audio} {block:Video}
+          <div class="video">
+            {Video-400} {block:Caption}
+            <div class="caption">{Caption}</div>
+            {/block:Caption}
+          </div>
+          {/block:Video}
         </div>
-        {block:Source}
-        <div class="source">&mdash; {Source}</div>
-        {/block:Source}
       </div>
-      {/block:Quote} {block:Link} {block:PermalinkPage}
-      <script type="text/javascript">
-        redirectTo('{URL}');
-      </script>
-      {/block:PermalinkPage}
-      <div class="link">
-        <a href="{URL}" class="link" {Target}>{Name}</a> {block:Description}
-        <span class="description">{Description}</span>
-        {/block:Description}
+      <div class="small-12 medium-1 columns end right-column">
+        <a href="{Permalink}" class="permalink" title="Permalink">&rarr;</a>
       </div>
-      {/block:Link} {block:Conversation}
-      <div class="conversation">
-        {block:Title}
-        <h2><a href="{Permalink}">{Title}</a>
-        </h2>
-        {/block:Title}
-        <ul>
-          {block:Lines}
-          <li class="{Alt}">
-            {block:Label}
-            <span class="label user_{UserNumber}">{Label}</span>
-            {/block:Label} {Line}
-          </li>
-          {/block:Lines}
-        </ul>
-      </div>
-      {/block:Conversation} {block:Audio}
-      <div class="audio">
-        {AudioPlayerBlack} {block:Caption}
-        <div class="caption">{Caption}</div>
-        {/block:Caption}
-      </div>
-      {/block:Audio} {block:Video}
-      <div class="video">
-        {Video-400} {block:Caption}
-        <div class="caption">{Caption}</div>
-        {/block:Caption}
-      </div>
-      {/block:Video}
     </div>
     {/block:Posts}
 

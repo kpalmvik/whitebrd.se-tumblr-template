@@ -39,6 +39,14 @@
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
 
+/*
+  Prevent column from collapsing
+  <http://stackoverflow.com/questions/23569705/zurb-foundation-prevent-empty-column-collapsing-to-zero-width>
+*/
+.column, .columns{
+  min-height: 1px;
+}
+
 @import "colors";
 @import "rss";
 
@@ -109,51 +117,87 @@ a {
   margin: auto;
   position: relative;
 }
-div.post {
-  position: relative;
-  margin-bottom: 40px;
-  padding-right: 20px;
+
+@media #{$medium-up} {
+  .post {
+    margin-bottom: rem-calc(40);
+  }
 }
-div.post div.date {
-  position: absolute;
-  left: -260px;
-  text-align: right;
-  width: 230px;
-  white-space: nowrap;
-  font: normal 34px Helvetica, sans-serif;
-  letter-spacing: -2px;
+
+.date {
   color: $dark-gray;
-  text-transform: uppercase;
-  line-height: 35px;
-}
-div.post div.date div.date_brick {
-  float: right;
-  height: 30px;
-  width: 45px;
-  background-color: $pure-red;
-  color: #FCFCFC;
-  font: Bold 12px Verdana, Sans-Serif;
-  text-align: center;
-  line-height: 12px;
-  margin-left: 10px;
-  padding-top: 5px;
-  letter-spacing: 0px;
-  overflow: hidden;
-}
-div.post span.permalink {
-  display: inline;
-  position: absolute;
-  color: $light-gray;
-  right: -2rem;
-  top: 0px;
+  font-family: Helvetica, sans-serif;
   font-weight: bold;
+  border-bottom: 3px solid $mid-gray;
+  margin: 2rem 0 0.5rem 0;
+  text-align: right;
+  padding-right: 0;
+}
+.date-day {
+  display: none;
+}
+.date-brick {
+  display: inline-block;
+}
+
+@media #{$medium-up} {
+  .date {
+    float: right;
+    margin: 0;
+    border: none;
+  }
+  .date-day {
+    float: left;
+    display: inline-block;
+    color: $dark-gray;
+    font-family: Helvetica, sans-serif;
+    font-size: rem-calc(34);
+    line-height: rem-calc(35);
+    text-transform: uppercase;
+    letter-spacing: rem-calc(-2);
+    white-space: nowrap;
+  }
+  .date-brick {
+    font-family: verdana,sans-serif;
+    font-weight: bold;
+    font-size: rem-calc(12);
+    line-height: rem-calc(12);
+    letter-spacing: 0;
+    color: $light-light-gray;
+    background: $pure-red;
+    width: rem-calc(45);
+    text-align: center;
+    margin-left: rem-calc(10);
+    padding: rem-calc(3);
+    overflow: hidden;
+    float: left;
+    .date-brick-month, .date-brick-day {
+      display: block;
+    }
+  }
+}
+.permalink {
+  display: block;
+  float: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: $light-gray;
   transition: color 1s;
+
+  &:hover {
+    color: $pure-red;
+    transition: color 0.3s;
+  }
 }
-div.post:hover span.permalink {
-  display: inline;
-  color: $pure-red;
-  transition: color 0.3s;
+
+@media #{$medium-up} {
+  .permalink {
+    float: left;
+    font-size: 3rem;
+  }
 }
+
 div.post h2 {
   font-size: 18px;
   font-weight: bold;
