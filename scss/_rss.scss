@@ -1,0 +1,52 @@
+.rss-box {
+  float: left;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: block;
+
+  font-family: arial,helvetica,sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: $white;
+  text-decoration: none;
+
+  padding: 0.5rem;
+  border-right: 2px solid $white;
+  border-bottom: 2px solid $white;
+  width: 2.3rem;
+  background: $rss-orange;
+  text-align: center;
+}
+
+.rss-icon svg {
+  text-align: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: $white;
+}
+
+.rss-text {
+  display: none;
+}
+
+@media #{$medium-up} {
+  .rss-box {
+    width: 4rem;
+    padding: 0.2rem;
+  }
+  .rss-icon {
+    display: inline-block;
+
+    svg {
+      width: 0.8rem;
+      height: 0.8rem;
+      fill: $white;
+    }
+  }
+
+  .rss-text {
+    display: inline-block;
+  }
+}

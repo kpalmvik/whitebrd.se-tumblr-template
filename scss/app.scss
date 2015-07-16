@@ -1,0 +1,356 @@
+@import "settings";
+@import "normalize";
+//@import "foundation";
+
+// Or selectively include components
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+@import "foundation/components/grid";
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switches",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
+
+/*
+  Prevent column from collapsing
+  <http://stackoverflow.com/questions/23569705/zurb-foundation-prevent-empty-column-collapsing-to-zero-width>
+*/
+.column, .columns{
+  min-height: 1px;
+}
+
+@import "colors";
+@import "rss";
+
+body {
+  margin: 0;
+  background-color: $white;
+  font-family: Georgia, 'Lucida Grande', Helvetica, sans-serif;
+}
+a {
+  color: $dark-gray;
+}
+.reddot {
+  color: $whitebrd-red;
+}
+.logo {
+  text-align: center;
+  font-family: "franklin-gothic-urw", 'Trebuchet MS', Helvetica, sans-serif;
+  font-size: 3rem;
+  line-height: 3rem;
+  letter-spacing: 0.1rem;
+  font-weight: normal;
+  color: $black;
+  padding-bottom: 2rem;
+  margin: 2rem 0 0 0;
+
+  a {
+    color: $black;
+    text-decoration: none;
+  }
+}
+
+.gray-underline {
+  border-bottom: solid 1px $mid-gray;
+}
+
+@media #{$medium-up} {
+  .logo {
+    font-size: 4rem;
+  }
+}
+
+.whitebrd-about {
+  font-family: 'franklin-gothic-urw', 'Trebuchet MS', Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.12rem;
+  text-align: center;
+  margin: 1rem 0.5rem 1rem 0.5rem;
+  padding: 1rem;
+  background-color: $light-light-gray;
+  a {
+    color: $pure-red;
+    text-decoration: none;
+  }
+  h2 {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    margin: 0 0 0.5rem 0;
+  }
+  p {
+     margin: 0;
+     font-size: 1rem;
+     line-height: 1.1rem;
+   }
+}
+
+#content {
+  width: 480px;
+  margin: auto;
+  position: relative;
+}
+
+@media #{$medium-up} {
+  .post {
+    margin-bottom: rem-calc(40);
+  }
+}
+
+.date {
+  color: $dark-gray;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  border-bottom: 3px solid $mid-gray;
+  margin: 2rem 0 0.5rem 0;
+  text-align: right;
+  padding-right: 0;
+}
+.date-day {
+  display: none;
+}
+.date-brick {
+  display: inline-block;
+}
+
+@media #{$medium-up} {
+  .date {
+    float: right;
+    margin: 0;
+    border: none;
+  }
+  .date-day {
+    float: left;
+    display: inline-block;
+    color: $dark-gray;
+    font-family: Helvetica, sans-serif;
+    font-size: rem-calc(34);
+    line-height: rem-calc(35);
+    text-transform: uppercase;
+    letter-spacing: rem-calc(-2);
+    white-space: nowrap;
+  }
+  .date-brick {
+    font-family: verdana,sans-serif;
+    font-weight: bold;
+    font-size: rem-calc(12);
+    line-height: rem-calc(12);
+    letter-spacing: 0;
+    color: $light-light-gray;
+    background: $pure-red;
+    width: rem-calc(45);
+    text-align: center;
+    margin-left: rem-calc(10);
+    padding: rem-calc(3);
+    overflow: hidden;
+    float: left;
+    .date-brick-month, .date-brick-day {
+      display: block;
+    }
+  }
+}
+.permalink {
+  display: block;
+  float: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: $light-gray;
+  transition: color 1s;
+
+  &:hover {
+    color: $pure-red;
+    transition: color 0.3s;
+  }
+}
+
+@media #{$medium-up} {
+  .permalink {
+    float: left;
+    font-size: 3rem;
+  }
+}
+
+div.post h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: $black;
+  letter-spacing: -1px;
+  margin: 0px 0px 5px 0px;
+}
+div.post h2 a {
+  color: $black;
+  text-decoration: none;
+}
+div.post div.caption {
+  font-size: 14px;
+  font-weight: bold;
+  color: $dark-gray;
+  margin-top: 10px;
+  padding: 0px 20px 0px 20px;
+}
+div.post div.caption a {
+  color: $dark-gray;
+}
+span.description p {
+  margin: 0;
+}
+/* Regular Post */
+
+div.post div.regular {
+  font-size: 12px;
+  color: $dark-gray;
+  line-height: 17px;
+}
+div.post div.regular blockquote {
+  font-style: italic;
+  border-left: solid 2px $dark-gray;
+  padding-left: 10px;
+}
+/* Quote Post */
+
+div.post div.quote div.quote_text {
+  font-family: "franklin-gothic-urw", helvetica, sans-serif;
+  font-weight: bold;
+  color: $quote-red;
+  border-left: solid 5px $white;
+  padding-left: 10px;
+}
+div.post div.quote div.quote_text span.short {
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: -1px;
+}
+div.post div.quote div.quote_text span.medium {
+  font-size: 25px;
+  line-height: 27px;
+  letter-spacing: -1px;
+}
+div.post div.quote div.quote_text span.long {
+  font-size: 16px;
+  line-height: 20px;
+}
+div.post div.quote div.quote_text a {
+  color: $quote-red;
+}
+div.post div.quote div.source {
+  font-size: 16px;
+  font-weight: Bold;
+  color: $black;
+  margin-top: 5px;
+}
+div.post div.quote div.source a {
+  color: $black;
+}
+/* Link Post */
+
+div.post div.link a.link {
+  font-family: "franklin-gothic-urw", helvetica, sans-serif;
+  font-size: 1.4em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  color: $pure-red;
+  text-decoration: none;
+}
+div.post div.link span.description {
+  font-size: 1em;
+  font-weight: normal;
+  color: $dark-gray;
+}
+/* Conversation Post */
+
+div.post div.conversation ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px 0px 0px 1px;
+  border-left: solid 5px $pure-red;
+}
+div.post div.conversation ul li {
+  font-size: 12px;
+  padding: 4px 10px 4px 8px;
+  color: $black;
+  margin-bottom: 1px;
+}
+div.post div.conversation ul li span.label {
+  font-weight: bold;
+}
+div.post div.conversation ul li span.user_1 {
+  color: #c00;
+}
+div.post div.conversation ul li span.user_2 {
+  color: #00c;
+}
+div.post div.conversation ul li span.user_3 {
+  color: #0a0;
+}
+div.post div.conversation ul li.odd {
+  background-color: $pure-red;
+}
+div.post div.conversation ul li.even {
+  background-color: #ff2a00;
+}
+/* Video Post */
+
+div.post div.video {
+  width: 400px;
+  margin: auto;
+}
+/* Footer */
+
+div#footer {
+  margin: 40px 0px 30px 0px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: $dark-gray;
+}
+div#footer a {
+  text-decoration: none;
+  color: $dark-gray;
+}
+div#footer a:hover {
+  text-decoration: underline;
+}
+div#footer div#credit {
+  font: normal 0.8rem "franklin-gothic-urw", helvetica, sans-serif;
+  margin-top: 2rem;
+}
+.query {
+  font-weight: bold;
+}
+div#footer-pagenav {
+  font-family: "franklin-gothic-urw", helvetica, sans-serif;
+  font-size: 2.5em;
+}
+div#footer-archive {
+  font-family: "franklin-gothic-urw", helvetica, sans-serif;
+  font-size: 1.1rem;
+  margin: 0.5rem;
+}
