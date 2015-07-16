@@ -48,7 +48,6 @@
 }
 
 @import "colors";
-@import "rss";
 
 body {
   margin: 0;
@@ -338,7 +337,8 @@ div#footer a {
 div#footer a:hover {
   text-decoration: underline;
 }
-div#footer div#credit {
+
+div#footer div#credit, div#footer div#meta {
   font: normal 0.8rem "franklin-gothic-urw", helvetica, sans-serif;
   margin-top: 2rem;
 }
