@@ -158,6 +158,14 @@
         <a href="{Permalink}" class="permalink" title="Permalink">&rarr;</a>
       </div>
     </div>
+    {block:PermalinkPage}
+    <div class="row">
+      <div class="small-12 medium-7 medium-offset-3 columns post-full-date">
+        Posted <time
+          datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}">{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}</time>
+      </div>
+    </div>
+    {block:PermalinkPage}
     {/block:Posts}
 
     <div id="footer">
